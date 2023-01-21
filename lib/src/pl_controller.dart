@@ -120,6 +120,7 @@ abstract class PlController {
   @nonVirtual
   @protected
   void _unbind(_PlBinding binding) {
+    binding.status = _PlBindingStatus.disposed;
     _bindings.remove(binding);
     if (binding.groupKey != null) {
       _groupBindings[binding.groupKey!]?.remove(binding);

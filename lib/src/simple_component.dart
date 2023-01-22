@@ -1,7 +1,7 @@
 part of 'index.dart';
 
 /// A component that can be used to display something that will update
-/// according to the [PlController] state.
+/// according to the [SimpleController] state.
 /// ```dart
 /// PlComponent(
 ///   controller: controller,
@@ -11,8 +11,8 @@ part of 'index.dart';
 ///   ),
 /// );
 /// ```
-class PlComponent<T extends PlController> extends PlView<T> {
-  const PlComponent({
+class SimpleComponent<T extends SimpleController> extends SimpleView<T> {
+  const SimpleComponent({
     required super.controller,
     this.child,
     super.groupKey,

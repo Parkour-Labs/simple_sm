@@ -1,8 +1,8 @@
 part of 'index.dart';
 
-/// The controller for the [PlView] widgets.
+/// The controller for the [SimpleView] widgets.
 ///
-/// Firstly, the controller would be bound to the [PlView] widget. You can
+/// Firstly, the controller would be bound to the [SimpleView] widget. You can
 /// call the [onBound] method to do some initialization work right after the
 /// binding is established.
 ///
@@ -27,7 +27,7 @@ part of 'index.dart';
 /// view. Further, calling this method will do nothing to this controller.
 /// You can write the clean up code in the [onDispose] method, which will be
 /// called when the controller is disposed from every view that it is bound to.
-abstract class PlController {
+abstract class SimpleController {
   /// If the controller has been initialized.
   bool _initialized = false;
 
@@ -41,10 +41,10 @@ abstract class PlController {
   bool _firstViewReady = false;
 
   /// The bindings of this controller.
-  final _bindings = HashSet<_PlBinding>();
+  final _bindings = HashSet<_SimpleBinding>();
 
   /// The group bindings of this controller.
-  final _groupBindings = HashMap<Object, HashSet<_PlBinding>>();
+  final _groupBindings = HashMap<Object, HashSet<_SimpleBinding>>();
 
   /// This method will be called when the controller is being initialized. It
   /// will only be called once.
@@ -75,7 +75,7 @@ abstract class PlController {
   FutureOr<void> _onReady() async {
     await onReady();
     for (final binding in _bindings) {
-      if (binding.status == _PlBindingStatus.initialized) {
+      if (binding.status == _SimpleBindingStatus.initialized) {
         binding.setState();
       }
     }
@@ -101,13 +101,13 @@ abstract class PlController {
 
   /// Binds the controller to a view.
   @protected
-  void _bind(_PlBinding binding) {
+  void _bind(_SimpleBinding binding) {
     _bindings.add(binding);
     if (binding.groupKey != null) {
-      _groupBindings.putIfAbsent(binding.groupKey!, () => HashSet<_PlBinding>())
+      _groupBindings.putIfAbsent(binding.groupKey!, () => HashSet<_SimpleBinding>())
         .add(binding);
     }
-    binding.status = _PlBindingStatus.initialized;
+    binding.status = _SimpleBindingStatus.initialized;
     onBound();
   }
 
@@ -119,8 +119,8 @@ abstract class PlController {
   /// Unbinds the controller from a view.
   @nonVirtual
   @protected
-  void _unbind(_PlBinding binding) {
-    binding.status = _PlBindingStatus.disposed;
+  void _unbind(_SimpleBinding binding) {
+    binding.status = _SimpleBindingStatus.disposed;
     _bindings.remove(binding);
     if (binding.groupKey != null) {
       _groupBindings[binding.groupKey!]?.remove(binding);
@@ -158,7 +158,7 @@ abstract class PlController {
   void refresh([Iterable<Object>? groupKeys]) {
     if (groupKeys == null) {
       for (final binding in _bindings) {
-        if (binding.status == _PlBindingStatus.initialized) {
+        if (binding.status == _SimpleBindingStatus.initialized) {
           binding.setState();
         }
       }
@@ -166,7 +166,7 @@ abstract class PlController {
       for (final groupKey in groupKeys) {
         final bindings = _groupBindings[groupKey] ?? {};
         for (final binding in bindings) {
-          if (binding.status == _PlBindingStatus.initialized) {
+          if (binding.status == _SimpleBindingStatus.initialized) {
             binding.setState();
           }
         }

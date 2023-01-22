@@ -25,7 +25,7 @@ part of 'index.dart';
 /// }
 /// ```
 /// Then you are done!
-class PlBuilder<T extends PlController> extends PlView<T> {
+class PlBuilder<T extends SimpleController> extends SimpleView<T> {
   const PlBuilder({
     Key? key,
     required T controller,

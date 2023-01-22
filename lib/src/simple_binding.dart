@@ -1,11 +1,11 @@
 part of 'index.dart';
 
 /// The underlying data structure that represents a binding between a
-/// [PlController] and a [PlView].
-class _PlBinding {
-  _PlBinding(this.setState, {
+/// [SimpleController] and a [SimpleView].
+class _SimpleBinding {
+  _SimpleBinding(this.setState, {
     this.groupKey,
-    this.status = _PlBindingStatus.uninitialized,
+    this.status = _SimpleBindingStatus.uninitialized,
 });
 
   /// The function that is used to update the state of the stateful widget.
@@ -16,11 +16,11 @@ class _PlBinding {
   final Object? groupKey;
 
   /// The status of this binding.
-  _PlBindingStatus status;
+  _SimpleBindingStatus status;
 }
 
-/// The status of a [_PlBinding].
-enum _PlBindingStatus {
+/// The status of a [_SimpleBinding].
+enum _SimpleBindingStatus {
   /// The binding is not yet initialized.
   uninitialized,
 

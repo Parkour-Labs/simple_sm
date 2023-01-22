@@ -1,9 +1,9 @@
 part of 'index.dart';
 
-/// A [PlView] is a base view from which you can extend to create your own
-/// views that can be used alongside a subclass [T] of a [PlController].
-abstract class PlView<T extends PlController> extends StatefulWidget {
-  const PlView({
+/// A [SimpleView] is a base view from which you can extend to create your own
+/// views that can be used alongside a subclass [T] of a [SimpleController].
+abstract class SimpleView<T extends SimpleController> extends StatefulWidget {
+  const SimpleView({
     super.key,
     required this.controller,
     this.groupKey,
@@ -20,18 +20,18 @@ abstract class PlView<T extends PlController> extends StatefulWidget {
   Widget build(BuildContext context);
 
   @override
-  State<PlView<T>> createState() => _PlViewState<T>();
+  State<SimpleView<T>> createState() => _SimpleViewState<T>();
 }
 
-class _PlViewState<T extends PlController> extends State<PlView<T>> {
-  _PlBinding? _binding;
+class _SimpleViewState<T extends SimpleController> extends State<SimpleView<T>> {
+  _SimpleBinding? _binding;
 
   @override
   void initState() {
     super.initState();
-    _binding = _PlBinding(
+    _binding = _SimpleBinding(
       () => setState(() {}),
-      status: _PlBindingStatus.uninitialized,
+      status: _SimpleBindingStatus.uninitialized,
       groupKey: widget.groupKey,
     );
     widget.controller._bind(_binding!);

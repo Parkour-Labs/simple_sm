@@ -1,3 +1,3 @@
-library pl_controller_view;
+library simple_sm;
 
 export 'src/index.dart';

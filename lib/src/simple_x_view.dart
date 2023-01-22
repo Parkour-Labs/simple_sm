@@ -1,9 +1,9 @@
 part of 'index.dart';
 
-/// A [SimpleView] is a base view from which you can extend to create your own
-/// views that can be used alongside a subclass [T] of a [SimpleController].
-abstract class SimpleView<T extends SimpleController> extends StatefulWidget {
-  const SimpleView({
+/// A [SimpleXView] is a base view from which you can extend to create your own
+/// views that can be used alongside a subclass [T] of a [SimpleXController].
+abstract class SimpleXView<T extends SimpleXController> extends StatefulWidget {
+  const SimpleXView({
     super.key,
     required this.controller,
     this.groupKey,
@@ -20,16 +20,16 @@ abstract class SimpleView<T extends SimpleController> extends StatefulWidget {
   Widget build(BuildContext context);
 
   @override
-  State<SimpleView<T>> createState() => _SimpleViewState<T>();
+  State<SimpleXView<T>> createState() => _SimpleXViewState<T>();
 }
 
-class _SimpleViewState<T extends SimpleController> extends State<SimpleView<T>> {
-  _SimpleBinding? _binding;
+class _SimpleXViewState<T extends SimpleXController> extends State<SimpleXView<T>> {
+  _SimpleXBinding? _binding;
 
   @override
   void initState() {
     super.initState();
-    _binding = _SimpleBinding(
+    _binding = _SimpleXBinding(
       () => setState(() {}),
       status: _SimpleBindingStatus.uninitialized,
       groupKey: widget.groupKey,

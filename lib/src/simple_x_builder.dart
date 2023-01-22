@@ -25,8 +25,8 @@ part of 'index.dart';
 /// }
 /// ```
 /// Then you are done!
-class SimpleBuilder<T extends SimpleController> extends SimpleView<T> {
-  const SimpleBuilder({
+class SimpleXBuilder<T extends SimpleXController> extends SimpleXView<T> {
+  const SimpleXBuilder({
     Key? key,
     required T controller,
     required this.builder,

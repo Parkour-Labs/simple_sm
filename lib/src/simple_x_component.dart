@@ -1,9 +1,9 @@
 part of 'index.dart';
 
 /// A component that can be used to display something that will update
-/// according to the [SimpleController] state.
+/// according to the [SimpleXController] state.
 /// ```dart
-/// PlComponent(
+/// SimpleXComponent(
 ///   controller: controller,
 ///   child: ListTile(
 ///     title: Text(controller.count.toString()),
@@ -11,8 +11,8 @@ part of 'index.dart';
 ///   ),
 /// );
 /// ```
-class SimpleComponent<T extends SimpleController> extends SimpleView<T> {
-  const SimpleComponent({
+class SimpleXComponent<T extends SimpleXController> extends SimpleXView<T> {
+  const SimpleXComponent({
     required super.controller,
     this.child,
     super.groupKey,

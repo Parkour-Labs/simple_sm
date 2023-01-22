@@ -1,9 +1,9 @@
 part of 'index.dart';
 
 /// The underlying data structure that represents a binding between a
-/// [SimpleController] and a [SimpleView].
-class _SimpleBinding {
-  _SimpleBinding(this.setState, {
+/// [SimpleXController] and a [SimpleXView].
+class _SimpleXBinding {
+  _SimpleXBinding(this.setState, {
     this.groupKey,
     this.status = _SimpleBindingStatus.uninitialized,
 });
@@ -19,7 +19,7 @@ class _SimpleBinding {
   _SimpleBindingStatus status;
 }
 
-/// The status of a [_SimpleBinding].
+/// The status of a [_SimpleXBinding].
 enum _SimpleBindingStatus {
   /// The binding is not yet initialized.
   uninitialized,

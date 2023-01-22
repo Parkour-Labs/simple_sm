@@ -1,6 +1,6 @@
 name: simplex
 description: A simple state management library for Flutter.
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/Parkour-Labs/simple_sm
 
 environment:

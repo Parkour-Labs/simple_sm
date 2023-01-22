@@ -1,8 +1,8 @@
 part of 'index.dart';
 
-/// The controller for the [SimpleView] widgets.
+/// The controller for the [SimpleXView] widgets.
 ///
-/// Firstly, the controller would be bound to the [SimpleView] widget. You can
+/// Firstly, the controller would be bound to the [SimpleXView] widget. You can
 /// call the [onBound] method to do some initialization work right after the
 /// binding is established.
 ///
@@ -27,7 +27,7 @@ part of 'index.dart';
 /// view. Further, calling this method will do nothing to this controller.
 /// You can write the clean up code in the [onDispose] method, which will be
 /// called when the controller is disposed from every view that it is bound to.
-abstract class SimpleController {
+abstract class SimpleXController {
   /// If the controller has been initialized.
   bool _initialized = false;
 
@@ -41,10 +41,10 @@ abstract class SimpleController {
   bool _firstViewReady = false;
 
   /// The bindings of this controller.
-  final _bindings = HashSet<_SimpleBinding>();
+  final _bindings = HashSet<_SimpleXBinding>();
 
   /// The group bindings of this controller.
-  final _groupBindings = HashMap<Object, HashSet<_SimpleBinding>>();
+  final _groupBindings = HashMap<Object, HashSet<_SimpleXBinding>>();
 
   /// This method will be called when the controller is being initialized. It
   /// will only be called once.
@@ -72,7 +72,7 @@ abstract class SimpleController {
 
   @nonVirtual
   @protected
-  FutureOr<void> _onReady(_SimpleBinding binding) async {
+  FutureOr<void> _onReady(_SimpleXBinding binding) async {
     binding.status = _SimpleBindingStatus.ready;
     await onReady();
     for (final binding in _bindings) {
@@ -102,10 +102,10 @@ abstract class SimpleController {
 
   /// Binds the controller to a view.
   @protected
-  void _bind(_SimpleBinding binding) {
+  void _bind(_SimpleXBinding binding) {
     _bindings.add(binding);
     if (binding.groupKey != null) {
-      _groupBindings.putIfAbsent(binding.groupKey!, () => HashSet<_SimpleBinding>())
+      _groupBindings.putIfAbsent(binding.groupKey!, () => HashSet<_SimpleXBinding>())
         .add(binding);
     }
     binding.status = _SimpleBindingStatus.initialized;
@@ -120,7 +120,7 @@ abstract class SimpleController {
   /// Unbinds the controller from a view.
   @nonVirtual
   @protected
-  void _unbind(_SimpleBinding binding) {
+  void _unbind(_SimpleXBinding binding) {
     binding.status = _SimpleBindingStatus.disposed;
     _bindings.remove(binding);
     if (binding.groupKey != null) {

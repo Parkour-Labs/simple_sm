@@ -48,7 +48,7 @@ abstract class PlController {
 
   /// This method will be called when the controller is being initialized. It
   /// will only be called once.
-  void onInit();
+  void onInit() {}
 
   /// This method will initialize the controller.
   void _onInit() {

@@ -3,10 +3,10 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:pl_controller_view/pl_controller_view.dart';
+import 'package:pl_controller_view/simple_sm.dart';
 
-part 'pl_controller.dart';
-part 'pl_view.dart';
-part 'pl_binding.dart';
-part 'pl_builder.dart';
-part 'pl_component.dart';
+part 'simple_controller.dart';
+part 'simple_view.dart';
+part 'simple_binding.dart';
+part 'simple_builder.dart';
+part 'simple_component.dart';

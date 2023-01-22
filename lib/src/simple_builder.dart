@@ -4,7 +4,7 @@ part of 'index.dart';
 ///
 /// To use this, first, create a new controller.
 /// ```dart
-/// class MyController extends PlController {
+/// class MyController extends SimpleController {
 ///   int count = 0;
 ///   void increment() {
 ///     count++;
@@ -14,7 +14,7 @@ part of 'index.dart';
 /// ```
 /// Then, pass this in to a builder:
 /// ```dart
-/// PlBuilder&lt;MyController&gt;(
+/// SimpleBuilder&lt;MyController&gt;(
 ///   controller: MyController(),
 ///   builder: (controller) {
 ///     return TextButton(

@@ -72,10 +72,11 @@ abstract class SimpleController {
 
   @nonVirtual
   @protected
-  FutureOr<void> _onReady() async {
+  FutureOr<void> _onReady(_SimpleBinding binding) async {
+    binding.status = _SimpleBindingStatus.ready;
     await onReady();
     for (final binding in _bindings) {
-      if (binding.status == _SimpleBindingStatus.initialized) {
+      if (binding.status == _SimpleBindingStatus.ready) {
         binding.setState();
       }
     }
@@ -158,7 +159,7 @@ abstract class SimpleController {
   void refresh([Iterable<Object>? groupKeys]) {
     if (groupKeys == null) {
       for (final binding in _bindings) {
-        if (binding.status == _SimpleBindingStatus.initialized) {
+        if (binding.status == _SimpleBindingStatus.ready) {
           binding.setState();
         }
       }
@@ -166,7 +167,7 @@ abstract class SimpleController {
       for (final groupKey in groupKeys) {
         final bindings = _groupBindings[groupKey] ?? {};
         for (final binding in bindings) {
-          if (binding.status == _SimpleBindingStatus.initialized) {
+          if (binding.status == _SimpleBindingStatus.ready) {
             binding.setState();
           }
         }

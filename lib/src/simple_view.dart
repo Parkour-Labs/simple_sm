@@ -38,7 +38,7 @@ class _SimpleViewState<T extends SimpleController> extends State<SimpleView<T>> 
     widget.controller._onInit();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       await widget.controller._onFirstReady();
-      await widget.controller._onReady();
+      await widget.controller._onReady(_binding!);
     });
   }
 

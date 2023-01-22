@@ -1,3 +1,3 @@
-library simple_sm;
+library simple;
 
 export 'src/index.dart';

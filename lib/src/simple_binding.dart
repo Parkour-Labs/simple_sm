@@ -27,6 +27,9 @@ enum _SimpleBindingStatus {
   /// The binding is initialized.
   initialized,
 
+  /// The binding is ready.
+  ready,
+
   /// The binding is disposed.
   disposed,
 }

@@ -13,10 +13,10 @@ and the Flutter guide for
 
 ![banner](doc/images/banner.png)
 
-> Note that Simple SM at its current state now is not stable, use it at your 
+> Note that Simple SX at its current state now is not stable, use it at your 
 > own risk.
 
-Simple SM is a simple state management library for Flutter. It is heavily 
+Simple X is a simple state management library for Flutter. It is heavily 
 inspired by [GetX](https://pub.dev/packages/get) in a sense
 that
 1. their APIs are quite similar; and 
@@ -191,7 +191,7 @@ Widget build(BuildContext context) {
 
 ## Getting started
 
-To use this library, add `simple_sm` as a dependency in your pubspec.yaml, 
+To use this library, add `simple_sx` as a dependency in your pubspec.yaml, 
 then it should be good to go.
 
 ## Usage

@@ -191,7 +191,7 @@ Widget build(BuildContext context) {
 
 ## Getting started
 
-To use this library, add `simple_sx` as a dependency in your pubspec.yaml, 
+To use this library, add `simple_x` as a dependency in your pubspec.yaml, 
 then it should be good to go.
 
 ## Usage

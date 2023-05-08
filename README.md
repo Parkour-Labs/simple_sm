@@ -14,7 +14,7 @@ and the Flutter guide for
 ![banner](doc/images/banner.png)
 
 > Note that Simple X at its current state now is not stable, use it at your 
-> own risk.
+> own risk...
 
 Simple X is a simple state management library for Flutter. It is heavily 
 inspired by [GetX](https://pub.dev/packages/get) in a sense
